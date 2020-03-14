@@ -1528,7 +1528,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, AppService);
 
         this.http = http;
-        this.url = 'http://www.api.techway.xyz';
+        this.url = 'https://api.techway.xyz';
 
         this.getUserInfoFromLocalstorage = function () {
           return JSON.parse(localStorage.getItem('userInfo'));
@@ -1974,6 +1974,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.socket = socket;
         this._route = _route;
         this.userId = this._route.snapshot.params.userId;
+        this.userName = ng2_cookies_ng2_cookies__WEBPACK_IMPORTED_MODULE_2__["Cookie"].get('fullName');
 
         this.goToUsersview = function () {
           _this4.router.navigate(["users/view/".concat(_this4.userId)], {
@@ -2193,6 +2194,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.socket = socket;
         this.location = location;
         this.meetingId = this._route.snapshot.params.meetingId;
+        this.userName = ng2_cookies_ng2_cookies__WEBPACK_IMPORTED_MODULE_2__["Cookie"].get('fullName');
 
         this.getUser = function (userId) {
           _this6.appService.getSingleUser(userId).subscribe(function (apiResponse) {
@@ -3407,7 +3409,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, SocketService);
 
         this.http = http;
-        this.url = 'http://www.techway.xyz';
+        this.url = 'https://www.techway.xyz';
 
         this.verifyUser = function () {
           return rxjs__WEBPACK_IMPORTED_MODULE_3__["Observable"].create(function (observer) {
@@ -3607,6 +3609,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.appService = appService;
         this.toastr = toastr;
         this._route = _route;
+        this.userName = ng2_cookies_ng2_cookies__WEBPACK_IMPORTED_MODULE_5__["Cookie"].get('fullName');
         this.userId = this._route.snapshot.params.userId;
 
         this.goToLogin = function () {

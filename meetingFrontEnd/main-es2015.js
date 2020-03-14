@@ -914,7 +914,7 @@ __webpack_require__.r(__webpack_exports__);
 let AppService = class AppService {
     constructor(http) {
         this.http = http;
-        this.url = 'http://www.api.techway.xyz';
+        this.url = 'https://api.techway.xyz';
         this.getUserInfoFromLocalstorage = () => {
             return JSON.parse(localStorage.getItem('userInfo'));
         }; // end getUserInfoFromLocalstorage
@@ -1202,6 +1202,7 @@ let CreateComponent = class CreateComponent {
         this.socket = socket;
         this._route = _route;
         this.userId = this._route.snapshot.params.userId;
+        this.userName = ng2_cookies_ng2_cookies__WEBPACK_IMPORTED_MODULE_2__["Cookie"].get('fullName');
         this.goToUsersview = () => {
             this.router.navigate([`users/view/${this.userId}`], { queryParams: { name: this.fullName } });
         };
@@ -1326,6 +1327,7 @@ let EditComponent = class EditComponent {
         this.socket = socket;
         this.location = location;
         this.meetingId = this._route.snapshot.params.meetingId;
+        this.userName = ng2_cookies_ng2_cookies__WEBPACK_IMPORTED_MODULE_2__["Cookie"].get('fullName');
         this.getUser = (userId) => {
             this.appService.getSingleUser(userId).subscribe((apiResponse) => {
                 console.log(apiResponse);
@@ -2038,7 +2040,7 @@ __webpack_require__.r(__webpack_exports__);
 let SocketService = class SocketService {
     constructor(http) {
         this.http = http;
-        this.url = 'http://www.techway.xyz';
+        this.url = 'https://www.techway.xyz';
         this.verifyUser = () => {
             return rxjs__WEBPACK_IMPORTED_MODULE_3__["Observable"].create((observer) => {
                 this.socket.on('register-users', () => {
@@ -2162,6 +2164,7 @@ let EditprofileComponent = class EditprofileComponent {
         this.appService = appService;
         this.toastr = toastr;
         this._route = _route;
+        this.userName = ng2_cookies_ng2_cookies__WEBPACK_IMPORTED_MODULE_5__["Cookie"].get('fullName');
         this.userId = this._route.snapshot.params.userId;
         this.goToLogin = () => {
             this.router.navigate(['/login']);
